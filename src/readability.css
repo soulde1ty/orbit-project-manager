@@ -1,0 +1,709 @@
+/* Reading rhythm and interaction sizes shared by desktop and mobile. */
+:root {
+  font-size: 16px;
+  --accent: #6754d6;
+  --muted: #647087;
+  --border: #e4e7ef;
+  --radius: 18px;
+}
+body {
+  color: #283146;
+  background: #f5f6fb;
+}
+.page-heading h1,
+.login-copy h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+.page-heading h1 {
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  line-height: 1.15;
+}
+.page-heading p,
+.login-copy p,
+.login-form > p,
+.settings-card p,
+.empty-state p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #626e83;
+}
+.eyebrow,
+.sidebar-section {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+.nav-item,
+.button,
+.button.small,
+.text-link,
+.stat-label,
+.card-header p,
+.project-info strong,
+.risk-info strong,
+.team-info strong,
+.chart-project-label,
+.task-title,
+.project-card-description,
+.task-card-description,
+.member-email,
+.field > span,
+.select.compact,
+.data-table td,
+.table-task-title,
+.data-table th,
+.snapshot-top h3,
+.recommendation-banner p,
+.recommendation-banner strong,
+.timeline-content p,
+.event-details,
+.setting-row,
+.breadcrumb {
+  font-size: 0.875rem;
+}
+.card-header h2,
+.section-toolbar h2,
+.settings-card h2,
+.comments-section h3 {
+  font-size: 1.0625rem;
+}
+.stat-note,
+.project-info small,
+.risk-info small,
+.team-info > div > span,
+.capacity-note,
+.task-date,
+.subtask-count,
+.chart-legend,
+.chart-note,
+.project-card-meta,
+.snapshot-top small,
+.snapshot-date,
+.timeline-item time,
+.workspace-footer,
+.card-chip,
+.project-tag,
+.badge,
+.table-project,
+.role-tag,
+.snapshot-metrics small,
+.pulse-summary small,
+.project-row-progress strong,
+.sidebar-note > span:last-child,
+.user-card small,
+.workspace-badge small,
+.field small,
+.form-note,
+.login-footer,
+.login-proof,
+.demo-hint {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.stat-note,
+.card-header p,
+.project-info small,
+.risk-info small,
+.chart-project-label,
+.chart-legend,
+.chart-note,
+.project-card-description,
+.task-card-description,
+.capacity-note,
+.snapshot-date,
+.table-project,
+.field small,
+.comment-placeholder {
+  color: #657086;
+}
+.task-date,
+.badge {
+  font-size: 0.875rem;
+}
+.field > span {
+  color: #424e65;
+}
+.input,
+.textarea,
+.select {
+  font-size: 1rem;
+  min-height: 44px;
+}
+.input,
+.textarea {
+  border-color: #d7dce8;
+  border-radius: 10px;
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: #7b8496;
+}
+.button {
+  min-height: 44px;
+  border-radius: 10px;
+  padding: 11px 16px;
+}
+.button.small {
+  min-height: 40px;
+  padding: 9px 12px;
+}
+.button.primary {
+  box-shadow: 0 4px 12px #5542b51a;
+}
+.button.secondary {
+  color: #424e65;
+  border-color: #d7dce8;
+}
+.text-link {
+  color: #6451b6;
+}
+.language-switch button {
+  font-size: 0.875rem;
+  min-height: 38px;
+  min-width: 29px;
+}
+.search-box input {
+  font-size: 0.875rem;
+  width: 220px;
+}
+.search-box input::placeholder {
+  color: #788297;
+}
+.user-card strong,
+.workspace-badge strong {
+  font-size: 0.875rem;
+}
+.workspace-badge {
+  gap: 10px;
+}
+.sidebar-section {
+  color: #a8b2cb;
+}
+.sidebar-note {
+  border-color: #ffffff14;
+  background: #ffffff05;
+}
+.sidebar-note strong {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #f0edf8;
+}
+.sidebar-note > span:last-child,
+.workspace-badge small,
+.user-card small {
+  color: #aab5ce;
+}
+.sidebar-note-icon {
+  color: #efb294;
+}
+.sidebar .avatar {
+  color: #323c4c;
+}
+.card,
+.stat-card,
+.project-card {
+  box-shadow: 0 3px 12px #1e294203;
+}
+.stat-icon {
+  border-radius: 12px;
+  width: 36px;
+  height: 36px;
+}
+.stat-value {
+  font-size: 2.15rem;
+  letter-spacing: -0.04em;
+}
+.stat-value small {
+  font-size: 1.3rem;
+  color: #7c8597;
+}
+.stat-icon.purple {
+  color: #7462ba;
+}
+.stat-icon.blue {
+  color: #4f78a7;
+}
+.stat-icon.green {
+  color: #3e806a;
+}
+.stat-icon.orange {
+  color: #9b6e3e;
+}
+.progress-track {
+  background: #edf0f6;
+}
+.chart-bar.plan {
+  background: #dfdbea;
+}
+.chart-legend .legend-dot.planned {
+  background: #d7d0e7;
+}
+.chart-project {
+  margin-bottom: 24px;
+}
+.pulse-summary {
+  flex-wrap: wrap;
+}
+.pulse-summary small {
+  max-width: 150px;
+}
+.team-info > div {
+  gap: 8px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.team-info strong {
+  line-height: 1.4;
+}
+.project-row,
+.risk-row {
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+.project-info strong,
+.risk-info strong {
+  line-height: 1.5;
+}
+.project-row-progress {
+  min-width: 64px;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  font-size: 0.8125rem;
+}
+.avatar.small {
+  width: 30px;
+  height: 30px;
+  font-size: 0.75rem;
+}
+.kanban-header h2 {
+  font-size: 0.875rem;
+}
+.kanban-column {
+  min-width: 285px;
+}
+.task-title {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.task-card {
+  border-color: #e1e5ed;
+  box-shadow: 0 3px 8px #1d294206;
+}
+.task-card-description {
+  line-height: 1.65;
+}
+.task-card-footer {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.task-date {
+  white-space: normal;
+  line-height: 1.5;
+}
+.badge.active,
+.badge.in_progress {
+  color: #65518d;
+}
+.badge.completed,
+.badge.done,
+.badge.low {
+  color: #356c54;
+}
+.badge.paused,
+.badge.review,
+.badge.medium {
+  color: #805d28;
+}
+.badge.high,
+.badge.blocked,
+.badge.urgent {
+  color: #944c44;
+}
+.risk-breakdown p,
+.risk-component {
+  font-size: 0.875rem;
+  color: #775e3f;
+}
+.comment-placeholder {
+  margin: 12px 0 18px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.comments-section input {
+  min-width: 0;
+}
+.comment p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.toast {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.empty-state {
+  padding: 42px 24px;
+}
+.empty-state h3 {
+  font-size: 1.125rem;
+}
+.empty-state p {
+  max-width: 440px;
+}
+.task-empty-state {
+  margin-bottom: 24px;
+}
+.form-grid {
+  gap: 22px 18px;
+}
+.form-grid .field {
+  gap: 9px;
+}
+.checkbox-row {
+  font-size: 0.875rem;
+}
+.modal-header h2 {
+  font-size: 1.25rem;
+}
+.modal-footer .button {
+  min-height: 44px;
+}
+.recommendation-banner {
+  background: #f0eef9;
+}
+.recommendation-banner p {
+  color: #61577d;
+  line-height: 1.7;
+}
+.recommendation-banner strong {
+  color: #4f416e;
+}
+.login-story {
+  background: radial-gradient(ellipse at 10% 90%, #87584c35, transparent 60%), #20283d;
+}
+.login-copy h1 {
+  font-size: clamp(3.25rem, 5vw, 4.8rem);
+  color: #fff7ef;
+}
+.login-copy p {
+  color: #c3c8da;
+  max-width: 440px;
+}
+.login-copy .eyebrow {
+  color: #efb294;
+}
+.login-proof {
+  color: #c3c8da;
+  line-height: 1.7;
+  gap: 12px;
+}
+.login-proof > svg {
+  color: #efb294;
+  flex-shrink: 0;
+}
+.login-orbit .orbit-core {
+  background: #efc3a8;
+  color: #493d54;
+}
+.floating-chip {
+  font-size: 0.875rem;
+}
+.login-form .field > span {
+  font-size: 0.875rem;
+  color: #424e65;
+}
+.login-footer {
+  color: #697287;
+}
+.demo-hint {
+  color: #667086 !important;
+  font-size: 0.875rem !important;
+}
+.daily-focus {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 28px;
+  margin: 0 0 26px;
+  background: linear-gradient(110deg, #fff4ed, #fffaf7 65%, #fff);
+  border: 1px solid #efd9cb;
+  border-left: 4px solid #d99070;
+  border-radius: 18px;
+}
+.focus-symbol {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: #f9dfcf;
+  border-radius: 16px 16px 16px 5px;
+  color: #935738;
+  transform: rotate(-4deg);
+}
+.focus-copy {
+  flex: 1;
+  min-width: 0;
+}
+.focus-eyebrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: #825a46;
+  margin-bottom: 9px;
+  font-weight: 650;
+}
+.focus-eyebrow > span {
+  font-weight: 400;
+  border-left: 1px solid #d7bca8;
+  padding-left: 12px;
+}
+.focus-copy h2 {
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #3a3241;
+}
+.focus-copy > p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #756052;
+  margin-top: 7px;
+  max-width: 690px;
+}
+.focus-context {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 13px;
+  font-size: 0.8125rem;
+  color: #796354;
+}
+.focus-person {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+}
+.focus-deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.focus-person .avatar {
+  width: 25px;
+  height: 25px;
+  font-size: 0.75rem;
+}
+.focus-action {
+  background: #fff;
+  border: 1px solid #dfbdab;
+  color: #75472f;
+  flex-shrink: 0;
+}
+.focus-action:hover {
+  background: #fff6ef;
+  border-color: #c99474;
+}
+.daily-focus.is-clear {
+  background: #f0f7f3;
+  border-color: #d4e5db;
+  border-left-color: #7ba88b;
+}
+.is-clear .focus-symbol {
+  background: #dceee2;
+  color: #497459;
+}
+.is-clear .focus-copy > p,
+.is-clear .focus-eyebrow {
+  color: #567561;
+}
+@media (max-width: 1200px) {
+  .daily-focus {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .focus-action {
+    margin-left: 72px;
+  }
+  .search-box input {
+    width: 160px;
+  }
+  .sidebar-section {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+}
+@media (max-width: 700px) {
+  .main-content {
+    padding: 25px 18px 15px;
+  }
+  .page-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .page-heading h1 {
+    font-size: 2rem;
+  }
+  .page-heading p {
+    font-size: 0.9375rem;
+  }
+  .heading-actions {
+    max-width: none;
+    padding-top: 0;
+  }
+  .heading-actions .button {
+    font-size: 0.875rem;
+    min-height: 44px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 10px 14px;
+  }
+  .page-heading .eyebrow {
+    font-size: 0.75rem;
+  }
+  .breadcrumb {
+    font-size: 0.8125rem;
+  }
+  .search-box input {
+    width: 100px;
+    font-size: 0.8125rem;
+  }
+  .topbar-actions {
+    gap: 6px;
+  }
+  .language-switch {
+    gap: 3px;
+  }
+  .stat-card {
+    padding: 17px 14px;
+  }
+  .stat-label {
+    font-size: 0.875rem;
+  }
+  .stat-note {
+    font-size: 0.75rem;
+  }
+  .stat-icon {
+    width: 25px;
+    height: 28px;
+  }
+  .stat-value {
+    font-size: 2rem;
+  }
+  .card-header {
+    padding: 22px 18px 16px;
+    flex-wrap: wrap;
+  }
+  .card-header h2 {
+    font-size: 1rem;
+  }
+  .card-header p {
+    font-size: 0.875rem;
+  }
+  .project-info strong,
+  .risk-info strong,
+  .team-info strong {
+    font-size: 0.875rem;
+  }
+  .risk-row {
+    flex-wrap: wrap;
+  }
+  .risk-info {
+    min-width: 140px;
+  }
+  .risk-score {
+    font-size: 1rem;
+  }
+  .project-row-progress {
+    width: 60px;
+    min-width: 50px;
+  }
+  .project-info small,
+  .risk-info small {
+    font-size: 0.75rem;
+  }
+  .filter-controls .select,
+  .filter-controls .button {
+    font-size: 0.875rem;
+    min-height: 42px;
+  }
+  .filter-controls .project-filter {
+    min-width: 170px;
+  }
+  .section-toolbar .project-filter .select {
+    max-width: 180px;
+  }
+  .data-table th,
+  .data-table td,
+  .comparison-table th {
+    font-size: 0.875rem;
+  }
+  .field > span,
+  .checkbox-row,
+  .modal-footer .button {
+    font-size: 0.875rem;
+  }
+  .input,
+  .textarea,
+  .select {
+    font-size: 1rem;
+  }
+  .timeline-item {
+    flex-wrap: wrap;
+  }
+  .timeline-content {
+    min-width: 180px;
+  }
+  .timeline-item time {
+    max-width: none;
+    text-align: left;
+    margin-left: 42px;
+    font-size: 0.75rem;
+  }
+  .daily-focus {
+    padding: 20px;
+    gap: 14px;
+  }
+  .focus-symbol {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px 12px 12px 3px;
+  }
+  .focus-copy {
+    flex-basis: calc(100% - 54px);
+  }
+  .focus-copy h2 {
+    font-size: 1.0625rem;
+  }
+  .focus-context {
+    gap: 8px 12px;
+  }
+  .focus-action {
+    margin-left: 54px;
+    white-space: normal;
+  }
+  .login-copy h1 {
+    font-size: 2.75rem;
+    max-width: none;
+  }
+  .login-copy h1 br {
+    display: block;
+  }
+  .login-copy p {
+    font-size: 0.9375rem;
+    color: #c3c8da;
+  }
+  .login-copy .eyebrow {
+    font-size: 0.75rem;
+  }
+  .login-form h2 {
+    font-size: 1.65rem;
+  }
+}

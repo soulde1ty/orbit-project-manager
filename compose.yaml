@@ -1,0 +1,31 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo:27017/orbit
+      MONGODB_DATABASE: orbit
+      DEMO_MODE: ${DEMO_MODE:-true}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-demo@orbit.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+  mongo:
+    image: mongo:7
+    volumes:
+      - orbit-mongo:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+    restart: unless-stopped
+volumes:
+  orbit-mongo:
